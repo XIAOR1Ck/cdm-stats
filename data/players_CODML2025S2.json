@@ -1,0 +1,452 @@
+[
+    {
+        "player_id": "329450884",
+        "team_name": "wolves",
+        "player_name": "anzai",
+        "full_name": "wolves.安仔"
+    },
+    {
+        "player_id": "996607783",
+        "team_name": "godl",
+        "player_name": "abh1z",
+        "full_name": "godl.abh1z"
+    },
+    {
+        "player_id": "1829598948",
+        "team_name": "xrock",
+        "player_name": "nono",
+        "full_name": "xrock.nono"
+    },
+    {
+        "player_id": "286284894",
+        "team_name": "s8ul",
+        "player_name": "mxrvel",
+        "full_name": "s8ul.mxrvel"
+    },
+    {
+        "player_id": "1747629726",
+        "team_name": "q9",
+        "player_name": "maoqi",
+        "full_name": "q9.猫琪"
+    },
+    {
+        "player_id": "751327704",
+        "team_name": "spg",
+        "player_name": "nan",
+        "full_name": "spg.楠酱"
+    },
+    {
+        "player_id": "135300902",
+        "team_name": "q9",
+        "player_name": "ouling",
+        "full_name": "q9.欧灵"
+    },
+    {
+        "player_id": "1207938829",
+        "team_name": "ag",
+        "player_name": "cloud",
+        "full_name": "ag.云间"
+    },
+    {
+        "player_id": "2005285967",
+        "team_name": "wolves",
+        "player_name": "rise",
+        "full_name": "wolves.rise"
+    },
+    {
+        "player_id": "1989428376",
+        "team_name": "wolves",
+        "player_name": "pegg",
+        "full_name": "wolves.皮蛋"
+    },
+    {
+        "player_id": "492822204",
+        "team_name": "wl",
+        "player_name": "carl",
+        "full_name": "wl.carl"
+    },
+    {
+        "player_id": "503955372",
+        "team_name": "s8ul",
+        "player_name": "jezz",
+        "full_name": "s8ul.jezz"
+    },
+    {
+        "player_id": "913265947",
+        "team_name": "xceed",
+        "player_name": "misty",
+        "full_name": "xceed.misty"
+    },
+    {
+        "player_id": "1292381639",
+        "team_name": "ag",
+        "player_name": "yangi",
+        "full_name": "ag.扬一"
+    },
+    {
+        "player_id": "1804505980",
+        "team_name": "spg",
+        "player_name": "guxing",
+        "full_name": "spg.孤星"
+    },
+    {
+        "player_id": "1185281058",
+        "team_name": "oug",
+        "player_name": "tectonic",
+        "full_name": "oug.tectonic"
+    },
+    {
+        "player_id": "461741268",
+        "team_name": "xrock",
+        "player_name": "sunuo",
+        "full_name": "xrock.宿诺"
+    },
+    {
+        "player_id": "134901759",
+        "team_name": "xceed",
+        "player_name": "ryu",
+        "full_name": "xceed.ryu"
+    },
+    {
+        "player_id": "1665392857",
+        "team_name": "oug",
+        "player_name": "solo",
+        "full_name": "oug.solo"
+    },
+    {
+        "player_id": "798882242",
+        "team_name": "q9",
+        "player_name": "curly",
+        "full_name": "q9.依稀"
+    },
+    {
+        "player_id": "424596127",
+        "team_name": "q9",
+        "player_name": "dchen",
+        "full_name": "q9.断尘"
+    },
+    {
+        "player_id": "1576213430",
+        "team_name": "spg",
+        "player_name": "bird",
+        "full_name": "spg.菜鸟"
+    },
+    {
+        "player_id": "16872551",
+        "team_name": "godl",
+        "player_name": "viper",
+        "full_name": "godl.viper"
+    },
+    {
+        "player_id": "414315840",
+        "team_name": "godl",
+        "player_name": "warden",
+        "full_name": "godl.warden"
+    },
+    {
+        "player_id": "968173351",
+        "team_name": "dvs",
+        "player_name": "baby",
+        "full_name": "dvs.baby"
+    },
+    {
+        "player_id": "1237439699",
+        "team_name": "godl",
+        "player_name": "prevail",
+        "full_name": "godl.prevail"
+    },
+    {
+        "player_id": "1512589944",
+        "team_name": "dvs",
+        "player_name": "ecchan",
+        "full_name": "dvs.ecchan"
+    },
+    {
+        "player_id": "1515997751",
+        "team_name": "s8ul",
+        "player_name": "trunks",
+        "full_name": "s8ul.trunks"
+    },
+    {
+        "player_id": "1055851946",
+        "team_name": "spg",
+        "player_name": "suiwan",
+        "full_name": "spg.岁晚"
+    },
+    {
+        "player_id": "1979254302",
+        "team_name": "wolves",
+        "player_name": "sounds",
+        "full_name": "wolves.sounds"
+    },
+    {
+        "player_id": "312551003",
+        "team_name": "oug",
+        "player_name": "cartels",
+        "full_name": "oug.cartels"
+    },
+    {
+        "player_id": "189681306",
+        "team_name": "s8ul",
+        "player_name": "jokos",
+        "full_name": "s8ul.jokos"
+    },
+    {
+        "player_id": "825228807",
+        "team_name": "xceed",
+        "player_name": "kakkii",
+        "full_name": "xceed.kakkii"
+    },
+    {
+        "player_id": "169361931",
+        "team_name": "ag",
+        "player_name": "linmu",
+        "full_name": "ag.琳沐"
+    },
+    {
+        "player_id": "975064887",
+        "team_name": "ag",
+        "player_name": "xinan",
+        "full_name": "ag.心安"
+    },
+    {
+        "player_id": "135149629",
+        "team_name": "wl",
+        "player_name": "time",
+        "full_name": "wl.时候"
+    },
+    {
+        "player_id": "2003578293",
+        "team_name": "godl",
+        "player_name": "skullg",
+        "full_name": "godl.skullg"
+    },
+    {
+        "player_id": "1232031754",
+        "team_name": "ag",
+        "player_name": "glass",
+        "full_name": "ag.璃"
+    },
+    {
+        "player_id": "2006697664",
+        "team_name": "xlr8",
+        "player_name": "ghost",
+        "full_name": "xlr8.ghost"
+    },
+    {
+        "player_id": "895674116",
+        "team_name": "xrock",
+        "player_name": "chuanm",
+        "full_name": "xrock.梦川川"
+    },
+    {
+        "player_id": "663845945",
+        "team_name": "dvs",
+        "player_name": "dolaky",
+        "full_name": "dvs.dolaky"
+    },
+    {
+        "player_id": "961351612",
+        "team_name": "oug",
+        "player_name": "ayeoraph",
+        "full_name": "oug.ayeoraph"
+    },
+    {
+        "player_id": "1819151667",
+        "team_name": "s8ul",
+        "player_name": "fran",
+        "full_name": "s8ul.fran"
+    },
+    {
+        "player_id": "825412623",
+        "team_name": "godl",
+        "player_name": "learn",
+        "full_name": "godl.learn"
+    },
+    {
+        "player_id": "1038431964",
+        "team_name": "xlr8",
+        "player_name": "olive",
+        "full_name": "xlr8.olive"
+    },
+    {
+        "player_id": "1679054983",
+        "team_name": "wl",
+        "player_name": "06",
+        "full_name": "wl.06"
+    },
+    {
+        "player_id": "1019014755",
+        "team_name": "wolves",
+        "player_name": "wind",
+        "full_name": "wolves.wind"
+    },
+    {
+        "player_id": "1752911733",
+        "team_name": "xrock",
+        "player_name": "changge",
+        "full_name": "xrock.长歌"
+    },
+    {
+        "player_id": "1948550884",
+        "team_name": "xrock",
+        "player_name": "cc",
+        "full_name": "xrock.cc"
+    },
+    {
+        "player_id": "505413922",
+        "team_name": "ag",
+        "player_name": "bread",
+        "full_name": "ag.面包"
+    },
+    {
+        "player_id": "692003916",
+        "team_name": "s8ul",
+        "player_name": "sams",
+        "full_name": "s8ul.sams"
+    },
+    {
+        "player_id": "1851103819",
+        "team_name": "oug",
+        "player_name": "jaben",
+        "full_name": "oug.jaben"
+    },
+    {
+        "player_id": "1587527461",
+        "team_name": "dvs",
+        "player_name": "liar",
+        "full_name": "dvs.liar"
+    },
+    {
+        "player_id": "610936692",
+        "team_name": "q9",
+        "player_name": "zx0",
+        "full_name": "q9.zx0"
+    },
+    {
+        "player_id": "1339550331",
+        "team_name": "xceed",
+        "player_name": "liquid",
+        "full_name": "xceed.liquid"
+    },
+    {
+        "player_id": "1333053906",
+        "team_name": "dvs",
+        "player_name": "senmane",
+        "full_name": "dvs.senmane"
+    },
+    {
+        "player_id": "1637862370",
+        "team_name": "q9",
+        "player_name": "sun",
+        "full_name": "q9.sun"
+    },
+    {
+        "player_id": "2012185860",
+        "team_name": "wl",
+        "player_name": "galaxy",
+        "full_name": "wl.星河"
+    },
+    {
+        "player_id": "961483570",
+        "team_name": "xlr8",
+        "player_name": "gshotzz",
+        "full_name": "xlr8.gshotzz"
+    },
+    {
+        "player_id": "571518316",
+        "team_name": "xceed",
+        "player_name": "uron",
+        "full_name": "xceed.uron"
+    },
+    {
+        "player_id": "105088297",
+        "team_name": "spg",
+        "player_name": "chu",
+        "full_name": "spg.雏"
+    },
+    {
+        "player_id": "1151116218",
+        "team_name": "xlr8",
+        "player_name": "revil",
+        "full_name": "xlr8.revil"
+    },
+    {
+        "player_id": "697816601",
+        "team_name": "wl",
+        "player_name": "tian",
+        "full_name": "wl.天"
+    },
+    {
+        "player_id": "1334648809",
+        "team_name": "xrock",
+        "player_name": "asuka",
+        "full_name": "xrock.飞鸟"
+    },
+    {
+        "player_id": "2040824846",
+        "team_name": "xlr8",
+        "player_name": "vegaz",
+        "full_name": "xlr8.vegaz"
+    },
+    {
+        "player_id": "1564417869",
+        "team_name": "xlr8",
+        "player_name": "extinx",
+        "full_name": "xlr8.extinx"
+    },
+    {
+        "player_id": "1488738639",
+        "team_name": "dvs",
+        "player_name": "rachel",
+        "full_name": "dvs.rachel"
+    },
+    {
+        "player_id": "385082706",
+        "team_name": "kz",
+        "player_name": "xind",
+        "full_name": "kz.xind"
+    },
+    {
+        "player_id": "1705318772",
+        "team_name": "kz",
+        "player_name": "vikey",
+        "full_name": "kz.vikey"
+    },
+    {
+        "player_id": "198236548",
+        "team_name": "kz",
+        "player_name": "xtman",
+        "full_name": "kz.小天蛮"
+    },
+    {
+        "player_id": "2073561937",
+        "team_name": "kz",
+        "player_name": "snai",
+        "full_name": "kz.酸奶"
+    },
+    {
+        "player_id": "1047897660",
+        "team_name": "oug",
+        "player_name": "seven",
+        "full_name": "oug.seven"
+    },
+    {
+        "player_id": "1623720520",
+        "team_name": "kz",
+        "player_name": "baobao",
+        "full_name": "kz.鬼鬼"
+    },
+    {
+        "player_id": "321321312",
+        "team_name": "oug",
+        "player_name": "kingz",
+        "full_name": "oug.kingz"
+    },
+    {
+        "player_id": "859648210",
+        "team_name": "xrock",
+        "player_name": "king",
+        "full_name": "xrock.king"
+    }
+]
