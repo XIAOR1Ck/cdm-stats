@@ -1,0 +1,154 @@
+:root {
+    --base-bg : #0d0d0d;
+    --cards : #1c1c1c;
+    --primary-accent : #d4af37;
+    --text-color: #f5f5f5;
+    --text-sub: #b3b3b3;
+    --secondary-accent: #2563eb;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+ 
+}
+
+body {
+
+    background-color: var(--base-bg);
+    padding: 1em 2em 1em 2em;
+}
+fieldset {
+  border: 1px solid var(--secondary-accent);    /* Solid gray border */
+  border-radius: 10px;       /* Rounded corners */
+  padding: 20px;             /* Space inside the border */
+  margin: 15px 0;            /* Space above and below */
+}
+
+legend {
+  background-color: var(--base-bg); /* Dark background for the label */
+  color: var(--text-color);            /* White text color */
+  padding: 5px 10px;       /* Space around the text */
+  font-weight: bold;       /* Bold text */
+}
+
+label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 18pt;
+}
+
+#_formContainer {
+    background-color: var(--cards);
+    border: 1px solid var(--primary-accent);
+    border-radius: 10px;
+    color: var(--base-bg);
+}
+
+#_normalArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5pt 2em 5pt 2em;
+}
+
+#_formElements {
+    padding: inherit;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+#_formElements select {
+    padding: none;
+    background: var(--base-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    height: 2em;
+    width: 15em;
+    font-size: 15pt;
+    text-align: center;
+}
+#_formElements select:focus {
+    outline: none;
+    border: 2px solid;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    border-color: var(--primary-accent);
+}
+
+#_selectBoxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2em 0 0;
+}
+
+#_selectBoxes label {
+    padding-right: 0.65em;
+}
+
+#_radioBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#_radioBoxes input[type="radio"] {
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    }
+
+#_radioBoxes label {
+    display: inline-block;
+    background-color: var(--base-bg);
+    padding: 5px 10px;
+    border: 2px solid var(--primary-accent);
+    font-size: 12pt;
+    border-radius: 4px;
+}
+
+#_radioBoxes input[type="radio"]:checked + label {
+    background-color:#72839e;
+    border-color: #c42f59;
+}
+
+#_searchArea {
+    padding: 0 0 1em 2em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#_searchArea input {
+    width: 20em;
+    height: 2.5em;
+    background-color: var(--base-bg);
+    outline: none;
+    border: 2px solid var(--secondary-accent);
+    border-radius: 5px;
+    color: var(--text-sub);
+    text-align: center;
+}
+
+#_searchArea input:focus {
+    border-color: var(--primary-accent);
+    outline: none;
+}
+
+#_submitDiv {
+    display: flex;
+    justify-content: center;;
+    padding: 0.5em;
+}
+
+#_submitDiv input {
+    width: 10em;
+    height: 2.5em;
+    background-color: #171440;
+    font-size: 13pt;
+    border: 2px solid var(--primary-accent);
+    border-radius: 4px;
+    color: var(--text-sub);
+}

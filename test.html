@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Data Search Form</title>
+    <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Data Selection</legend>
+
+            <!-- Data Type Dropdown -->
+            <div class="nice-form-group">
+                <label for="dataType">Select Data Type</label>
+                <select id="dataType" name="dataType">
+                    <option value="">-- Select Type --</option>
+                    <option value="Schedule">Schedule</option>
+                    <option value="Player">Player</option>
+                    <option value="MapData">MapData</option>
+                    <option value="TeamData">TeamData</option>
+                </select>
+            </div>
+
+            <!-- Season Dropdown -->
+            <div class="nice-form-group">
+                <label for="season">Select Season</label>
+                <select id="season" name="season">
+                    <option value="">-- Select Season --</option>
+                    <option value="CODML2025S2">Current (CODML2025S2)</option>
+                    <option value="CODML2025S1">2025 S1 (CODML2025S1)</option>
+                    <option value="CODML2024S2">2024 S2 (CODML2024S2)</option>
+                </select>
+            </div>
+
+            <!-- Game Mode Radio Buttons -->
+            <div class="nice-form-group">
+                <label>Game Mode</label>
+                <div>
+                    <input type="radio" id="full" name="gameMode" value="FULL" checked />
+                    <label for="full">FULL</label>
+                </div>
+                <div>
+                    <input type="radio" id="hardpoint" name="gameMode" value="Hardpoint" />
+                    <label for="hardpoint">Hardpoint</label>
+                </div>
+                <div>
+                    <input type="radio" id="snd" name="gameMode" value="SnD" />
+                    <label for="snd">SnD</label>
+                </div>
+                <div>
+                    <input type="radio" id="control" name="gameMode" value="Control" />
+                    <label for="control">Control</label>
+                </div>
+            </div>
+
+            <!-- Search Box -->
+            <div class="nice-form-group">
+                <label for="playerSearch">Search Players</label>
+                <input type="search" id="playerSearch" name="playerSearch" placeholder="Enter player name..." />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="nice-form-group">
+                <button type="submit">Search</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

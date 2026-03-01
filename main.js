@@ -65,20 +65,6 @@ function attachDatalistMapping(inputId, hiddenId) {
   });
 }
 
-// Map player name to player id using hidden imput
-function attachDatalistMapping(inputId, hiddenId) {
-  const input = document.getElementById(inputId);
-  const hidden = document.getElementById(hiddenId);
-  const datalist = document.getElementById(input.getAttribute('list'));
-
-  input.addEventListener('input', function () {
-    const match = Array.from(datalist.options)
-      .find(option => option.value === input.value);
-
-    hidden.value = match ? match.dataset.id : '';
-    console.log(hidden.value)
-  });
-}
 
 
 // Extract the stats of a individual player from ranking data
@@ -107,15 +93,15 @@ function renderSearch(seasonid){
         })
     .then(data => {
             const dataOptions = data.map((values) => `<option value="${values.player_name}" data-id="${values.player_id}"></option>`).join('');
-            const searchArea = document.getElementById("search_Area");
+            const searchArea = document.getElementById("_searchArea");
             searchArea.innerHTML = `
-            <input type="text" id="player_input" list="players_list">
-            <datalist id="players_list">
+            <input type="text" id="_playerInput" list="_playerList">
+            <datalist id="_playerList">
                 ${dataOptions}
             </datalist>
-            <input type="hidden" id="player_id">
+            <input type="hidden" id="_playerId">
 `;
-            attachDatalistMapping('player_input','player_id')
+            attachDatalistMapping('_playerInput','_playerId')
         })
     .catch (error => console.error (error));
 }
