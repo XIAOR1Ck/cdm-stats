@@ -1,4 +1,32 @@
+// Api Base path
 const apiBase = "https://cdm-worker.sureshach-off.workers.dev/web/codm";
+
+//Html Elements
+const searchArea = document.getElementById('_searchArea');
+const dataType = document.getElementById('_dataType');
+const season = document.getElementById('_season');
+const form = document.getElementById('_searchForm');
+const gameMode = document.querySelector('input[name="gameModes"]:checked');
+const playerId = document.getElementById('_playerId');
+
+
+//Handle form submit event
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('form Submitted');
+} );
+
+// Event listener for Search input element rendering
+dataType.addEventListener('change', function(){
+    const seasonid = season.value;
+    if (dataType.value === 'searchPlayer') {
+        searchArea.style.display = 'block';
+        renderSearch(seasonid);
+    } else {
+        searchArea.style.display = 'none';
+    }
+});
+
 
 // Get Season Schedule. This also consists of VOD for matches already done.
 async function getSchedule(seasonid) {
@@ -93,9 +121,9 @@ function renderSearch(seasonid){
         })
     .then(data => {
             const dataOptions = data.map((values) => `<option value="${values.player_name}" data-id="${values.player_id}"></option>`).join('');
-            const searchArea = document.getElementById("_searchArea");
+            //const searchArea = document.getElementById("_searchArea");
             searchArea.innerHTML = `
-            <input type="text" id="_playerInput" list="_playerList">
+            <input type="text" id="_playerInput" list="_playerList" placeholder="Search Player...">
             <datalist id="_playerList">
                 ${dataOptions}
             </datalist>
@@ -108,4 +136,4 @@ function renderSearch(seasonid){
 //getPlayerData("CODML2025S2").then(playerData => searchPlayer(playerData, "2006697664"));
 //
 
-renderSearch('CODML2025S2');
+//renderSearch('CODML2025S2');
