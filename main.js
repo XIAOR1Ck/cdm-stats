@@ -13,7 +13,7 @@ const playerId = document.getElementById('_playerId');
 //Handle form submit event
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    console.log('form Submitted');
+    console.log(dataType.value, season.value, gameMode.value, playerId.value);
 } );
 
 // Event listener for Search input element rendering
