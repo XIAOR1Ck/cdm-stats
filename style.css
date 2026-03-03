@@ -18,6 +18,7 @@ body {
 
     background-color: var(--base-bg);
     padding: 1em 2em 1em 2em;
+    color: var(--text-color);
 }
 fieldset {
   border: 1px solid var(--secondary-accent);    /* Solid gray border */
@@ -36,11 +37,12 @@ legend {
 label {
     font-weight: 600;
     color: var(--text-color);
-    font-size: 18pt;
+    font-size: 16pt;
 }
 
 #_formContainer {
     background-color: var(--cards);
+    overflow: hidden;
     border: 1px solid var(--primary-accent);
     border-radius: 10px;
     color: var(--base-bg);
@@ -66,7 +68,7 @@ label {
     border-radius: 4px;
     height: 2em;
     width: 15em;
-    font-size: 15pt;
+    font-size: 13pt;
     text-align: center;
 }
 #_formElements select:focus {
@@ -145,10 +147,66 @@ label {
 
 #_submitDiv input {
     width: 10em;
-    height: 2.5em;
+    height: 2.25em;
     background-color: #171440;
     font-size: 13pt;
     border: 2px solid var(--primary-accent);
     border-radius: 4px;
     color: var(--text-sub);
+}
+#_submitDiv input:hover {
+    background-color:#72839e;
+    border-color: #c42f59;
+}
+
+#_contentArea {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    justify-content: center;
+}
+
+#_schedulePrev {
+    display: flex;
+    overflow: hidden;
+    background-color: var(--cards);
+    align-items: center;
+    border: 1px solid var(--primary-accent); 
+    width: 100%;
+}
+#_matchDate, #_vod {
+    width: 20%;
+}
+
+#_logo, #_name, #_score {
+    width: 12%;
+}
+
+
+#_score {
+    display: flex;
+}
+
+#_logo img {
+    height: 3em;
+    width: 3em;
+}
+
+#_vod select {
+    padding: none;
+    background: var(--base-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    height: 2em;
+    width: 100%;
+    font-size: 13pt;
+    text-align: center;
+}
+#_vod select:focus {
+    outline: none;
+    border: 2px solid;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    border-color: var(--primary-accent);
 }

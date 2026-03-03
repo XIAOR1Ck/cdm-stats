@@ -7,13 +7,32 @@ const dataType = document.getElementById('_dataType');
 const season = document.getElementById('_season');
 const form = document.getElementById('_searchForm');
 const gameMode = document.querySelector('input[name="gameModes"]:checked');
-const playerId = document.getElementById('_playerId');
+const contentArea = document.getElementById('_contentArea');
 
 
 //Handle form submit event
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', async function(e){
     e.preventDefault();
-    console.log(dataType.value, season.value, gameMode.value, playerId.value);
+    switch(dataType.value) {
+        case 'schedule':
+            await getSchedule(season.value);
+            
+            break;
+        case 'searchPlayer':
+            const playerId = document.getElementById('_playerId');
+            let playerList = await getPlayerData(season.value, gameMode.value);
+            let playerData = searchPlayer(playerList, playerId.value);
+            console.log(playerData);
+            break;
+        case 'mapData':
+            //TODO
+            break;
+        case 'teamData':
+            //TODO
+            break;
+        default:
+            alert('UNKNOWN DATA TYPE');
+    };
 } );
 
 // Event listener for Search input element rendering
@@ -26,6 +45,13 @@ dataType.addEventListener('change', function(){
         searchArea.style.display = 'none';
     }
 });
+
+// Event listener to change Combolist values for each season for searching player.
+season.addEventListener('change', function(){
+    if (dataType.value === 'searchPlayer') {
+        renderSearch(season.value);
+    }
+})
 
 
 // Get Season Schedule. This also consists of VOD for matches already done.
@@ -46,9 +72,36 @@ async function getSchedule(seasonid) {
 
 function parseSchedule(result) {
     const { schedule } = result;
+    contentArea.innerHTML = '';
     schedule.forEach(element => {
-        const { match_date, gname, hname } = element;
-        document.body.innerHTML += `<li>${hname} VS ${gname} on ${match_date}</li>`
+        const { match_date, gname, glogo, guest_score, hname,host_score, hlogo, vid_list } = element;
+        let vodList;
+        vid_list.forEach(option => {
+            vodList += `<option value="${option}">Map ${vid_list.indexOf(option) + 1}</option>`;
+        });
+        contentArea.innerHTML += `<div id="_schedulePrev">
+            <div id="_matchDate">
+              <span>${match_date}</span>
+            </div>
+            <div id="_logo">
+              <img src="${glogo}" alt="">
+            </div>
+            <div id="_name">${gname}</div>
+            <div id="_score">
+              <div>${guest_score}</div>
+              <span>:</span>
+              <div>${host_score}</div>
+            </div>
+            <div id="_name">${hname}</div>
+            <div id="_logo">
+              <img src="${hlogo}" alt="">  
+            </div>
+            <div id="_vod">
+              <select name="vodList" id="_vodList">
+               ${vodList}
+              </select>
+            </div>
+        </div>`
 
     });
     console.log(schedule)
