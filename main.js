@@ -3,26 +3,29 @@ const apiBase = "https://cdm-worker.sureshach-off.workers.dev/web/codm";
 
 //Html Elements
 const searchArea = document.getElementById('_searchArea');
+const form = document.getElementById('_searchForm');
+const contentArea = document.getElementById('_contentArea');
+
+//Form elements
 const dataType = document.getElementById('_dataType');
 const season = document.getElementById('_season');
-const form = document.getElementById('_searchForm');
-const gameMode = document.querySelector('input[name="gameModes"]:checked');
-const contentArea = document.getElementById('_contentArea');
 
 
 //Handle form submit event
 form.addEventListener('submit', async function(e){
     e.preventDefault();
+    const gameMode = document.querySelector('input[name="gameModes"]:checked');
     switch(dataType.value) {
         case 'schedule':
             await getSchedule(season.value);
             
             break;
         case 'searchPlayer':
+            console.log(gameMode.value)
             const playerId = document.getElementById('_playerId');
             let playerList = await getPlayerData(season.value, gameMode.value);
-            let playerData = searchPlayer(playerList, playerId.value);
-            console.log(playerData);
+            let [playerData, playerRank] = searchPlayer(playerList, playerId.value);
+            createStatCard(playerData, gameMode.value, playerRank);
             break;
         case 'mapData':
             //TODO
@@ -109,7 +112,7 @@ function parseSchedule(result) {
 
 
 // Fetch Player data from the ranking endpoint.
-async function getPlayerData(seasonid, game_mode = "FULL") {
+async function getPlayerData(seasonid, game_mode) {
     const endpoint = "/getPlayerRanking";
     let reqURL = apiBase + endpoint;
     try {
@@ -156,12 +159,78 @@ function searchPlayer(playerData, player_id) {
     });
     
     if (player) {
-        console.log(player, rank.indexOf(player)
-        );
+        return [player,rank.indexOf(player)];
+        
     } else {
         alert('Player Not Found');
-    }}
+};}
 
+// Create Player Stats Card
+
+function createStatCard(player, game_mode, rank) {
+   let { player_name, player_logo, team_name, team_logo, mvp, rating, times5accu_kill, max_k, k, d, kd, a} = player;
+   contentArea.innerHTML = `<div id="_playerCard">
+            <div id="_playerImage">
+              <img src="${player_logo}" alt="">
+            </div>
+            <div id="_playerDetails">
+              <div id="_playerName">
+                <h2>${player_name}</h2>
+                <div id="_rating">Rating: ${rating.toFixed(2)}</div>
+                <div id="_mvp">MVP: ${mvp}</div>
+                <div id="_rank">Rank: ${rank + 1}</div>
+                <div id="_teamTag">
+                  <img src="${team_logo}" width="20px" height="20px" alt="">
+                  ${team_name}</div>
+              </div>
+              <div id="_stats">
+              </div>
+            </div>
+        </div>`;
+    const statsArea = document.getElementById('_stats');
+    switch (game_mode) {
+        case 'FULL':
+            statsArea.innerHTML = `
+                <div id="_statBox">Kills: ${k}</div>
+                <div id="_statBox">Death: ${d}</div>
+                <div id="_statBox">Assist: ${a}</div>
+                <div id="_statBox">KD: ${kd}</div>
+                <div id="_statBox">MaxKills: ${max_k}</div>
+                <div id="_statBox">Five Spree: ${times5accu_kill}</div>
+            `;
+            break;
+        case 'Blast':
+            let {first_blood, sniper_kill_per_round, first_blood_rate, k_per_round, times_sniper_kill} = player; 
+            statsArea.innerHTML = `
+                <div id="_statBox">First Bloods: ${first_blood}</div>
+                <div id="_statBox">Sniper KPR: ${sniper_kill_per_round}</div>
+                <div id="_statBox">First Blood Rate: ${first_blood_rate}</div>
+                <div id="_statBox">Avg KPR: ${k_per_round}</div>
+                <div id="_statBox">Avg death: ${Math.round(d)}</div>
+                <div id="_statBox">Ace: ${times5accu_kill}</div>
+                <div id="_statBox">SR kill rate: ${times_sniper_kill.toFixed(2)}</div>
+                <div id="_statBox">KD: ${kd.toFixed(2)}</div>
+            `;
+            break;
+        case 'Hotspot':
+            let {hp_time, times_ult_kill, rounds} = player;
+            const mins = Math.floor(hp_time / 60);
+            const secs = hp_time % 60;
+            statsArea.innerHTML = `
+                <div id="_statBox">Avg Kills: ${k.toFixed(2)}</div>
+                <div id="_statBox">Avg Death: ${d.toFixed(2)}</div>
+                <div id="_statBox">Avg Assist: ${a.toFixed(2)}</div>
+                <div id="_statBox">KD: ${kd.toFixed(2)}</div>
+                <div id="_statBox">Max Kills: ${max_k}</div>
+                <div id="_statBox">Five Spree: ${times5accu_kill}</div>
+                <div id="_statBox">Avg operator kills: ${times_ult_kill.toFixed(2)}</div>
+                <div id="_statBox">Hill Time: ${mins}'${Math.floor(secs)}"</div>
+            `;
+            break;
+        case 'Control':
+            break;
+    }
+}
 
 // Render player Search Bar
 function renderSearch(seasonid){
