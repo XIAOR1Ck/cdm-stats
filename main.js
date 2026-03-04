@@ -5,6 +5,7 @@ const apiBase = "https://cdm-worker.sureshach-off.workers.dev/web/codm";
 const searchArea = document.getElementById('_searchArea');
 const form = document.getElementById('_searchForm');
 const contentArea = document.getElementById('_contentArea');
+const fieldset = document.querySelector("fieldset");
 
 //Form elements
 const dataType = document.getElementById('_dataType');
@@ -31,7 +32,7 @@ form.addEventListener('submit', async function(e){
             //TODO
             break;
         case 'teamData':
-            //TODO
+            getTeams(season.value);
             break;
         default:
             alert('UNKNOWN DATA TYPE');
@@ -41,11 +42,21 @@ form.addEventListener('submit', async function(e){
 // Event listener for Search input element rendering
 dataType.addEventListener('change', function(){
     const seasonid = season.value;
-    if (dataType.value === 'searchPlayer') {
-        searchArea.style.display = 'block';
-        renderSearch(seasonid);
-    } else {
-        searchArea.style.display = 'none';
+    switch(dataType.value) {
+        case "searchPlayer":
+            searchArea.style.display = 'block';
+            fieldset.style.display = 'block';
+            renderSearch(seasonid);
+            break;
+        case "teamData":
+        case "schedule":
+            fieldset.style.display = 'none';
+            searchArea.style.display = 'none';
+            break;
+        case "mapData":
+            fieldset.style.display = 'block';
+            searchArea.style.display = 'none';
+            break;
     }
 });
 
@@ -73,6 +84,8 @@ async function getSchedule(seasonid) {
     }
  };
 
+
+ // Parse Schedule for display
 function parseSchedule(result) {
     const { schedule } = result;
     contentArea.innerHTML = '';
@@ -166,7 +179,6 @@ function searchPlayer(playerData, player_id) {
 };}
 
 // Create Player Stats Card
-
 function createStatCard(player, game_mode, rank) {
    let { player_name, player_logo, team_name, team_logo, mvp, rating, times5accu_kill, max_k, k, d, kd, a} = player;
    contentArea.innerHTML = `<div id="_playerCard">
@@ -212,7 +224,8 @@ function createStatCard(player, game_mode, rank) {
                 <div id="_statBox">KD: ${kd.toFixed(2)}</div>
             `;
             break;
-        case 'Hotspot':
+        case "Hotspot":
+        case "Control":
             let {hp_time, times_ult_kill, rounds} = player;
             const mins = Math.floor(hp_time / 60);
             const secs = hp_time % 60;
@@ -226,6 +239,9 @@ function createStatCard(player, game_mode, rank) {
                 <div id="_statBox">Avg operator kills: ${times_ult_kill.toFixed(2)}</div>
                 <div id="_statBox">Hill Time: ${mins}'${Math.floor(secs)}"</div>
             `;
+            if (game_mode === "Hotspot") {
+                statsArea.innerHTML += `<div id="_statBox">Games Played: ${rounds}</div>`;
+            }
             break;
         case 'Control':
             break;
@@ -255,7 +271,59 @@ function renderSearch(seasonid){
         })
     .catch (error => console.error (error));
 }
-//getPlayerData("CODML2025S2").then(playerData => searchPlayer(playerData, "2006697664"));
-//
 
-//renderSearch('CODML2025S2');
+// Get Team Data
+async function getTeams(seasonid) {
+    const endpoint = "/getTeamRanking";
+    let reqURL = apiBase + endpoint;
+    try {
+    const response = await fetch(reqURL, {
+            method: "POST",
+            body: JSON.stringify({
+                seasonid: seasonid,
+            })
+        });
+        if (!response.ok) {
+            throw new Error(`Error : ${response.status}`);
+        }
+        const teamData = await response.json();
+        const {data} = teamData;
+        createTeamCards(data)
+    } catch (error){
+        console.error('Error: ', error);
+    }
+}
+
+// Create Team Cards From the Data
+function createTeamCards(teamData) {
+    //clear previous content from content area
+    contentArea.innerHTML = '';
+    const {rank} = teamData;
+    rank.forEach(elements => {
+        const teamRank = rank.indexOf(elements) + 1;
+        const {team_logo, hp_points_diff, bomb_win_rate, win_rate, control_points_diff, control_win_rate,team_name, bomb_points_diff,hp_win_rate } = elements;
+        contentArea.innerHTML += `
+            <div id="_teamCard">
+            <div id="_teamLogo">
+              <img src="${team_logo}" alt="">
+            </div>
+            <div id="_teamStats">
+              <div id="_teamDet">
+                <div id="_teamName">${team_name}</div>
+                <div id="_teamRank">Rank ${teamRank}</div>
+              </div>
+              <div id="_statArea">
+                <div id="_statsBox">Win Rate: ${parseFloat(win_rate * 100).toFixed(2)}%</div>
+                <div id="_statsBox">SnD Win Rate: ${parseFloat(bomb_win_rate * 100).toFixed(2)}%</div>
+                <div id="_statsBox">SnD Round Diff: ${parseFloat(bomb_points_diff.toFixed(2))}</div>
+                <div id="_statsBox">HP Win Rate: ${parseFloat(hp_win_rate * 100).toFixed(2)}%</div>
+                <div id="_statsBox">HP Points Diff:${parseFloat(hp_points_diff.toFixed(2))}</div>
+                <div id="_statsBox">Ctl Win Rate: ${parseFloat(control_win_rate * 100).toFixed(2)}%</div>
+                <div id="_statsBox">Ctl Round Diff: ${parseFloat(control_points_diff.toFixed(2))}</div>
+                <div id="_statsBox">Rank: ${teamRank}</div>
+              </div>
+            </div>
+        </div>
+        `;
+    })
+}

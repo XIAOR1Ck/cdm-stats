@@ -26,6 +26,7 @@ body {
     color: var(--text-color);
 }
 fieldset {
+  display: none;
   border: 1px solid var(--secondary-accent);    /* Solid gray border */
   border-radius: 10px;       /* Rounded corners */
   padding: 20px;             /* Space inside the border */
@@ -215,7 +216,7 @@ label {
     box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
     border-color: var(--primary-accent);
 }
-
+/*
 #_playerCard {
   max-width: 100%;
   height: 300px;
@@ -303,6 +304,108 @@ label {
   font-weight: 600;
   transition: 0.2s;
 }
+*/
+/*Team Card Section*/
+
+#_teamCard, #_playerCard {
+    background: linear-gradient(145deg, #1e293b, #0f172a);;
+    display: flex;
+    border: 2px solid var(--primary-accent);
+    border-radius: 20px;
+    min-width: 95%;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}
+#_teamLogo {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    max-height: 10rem;
+    align-items: center;
+}
+
+#_teamStats, #_playerDetails {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    
+}
+#_teamDet {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
+}
+
+#_statArea, #_stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+#_teamName, #_teamRank, #_rating, #_mvp, #_rank  {
+
+    min-width: 3rem;
+    margin: 10px;
+    font-size: 18px;
+    min-height: 1rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: white;
+}
+
+#_teamName, #_teamTag {
+    background-color: var(--secondary-accent);
+}
+
+#_teamRank, #_rating, #_mvp, #_rank {
+    background-color: var(--primary-accent);
+}
+
+#_statsBox, #_statBox {
+    font-size: 15px;
+    background: rgba(255,255,255,0.05);
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#_playerName h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#_teamTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-sub);
+}
+#_playerName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#_playerImage {
+    width: 30%;
+    max-height: 18rem;
+    padding-right: 2rem;
+    align-items: center;
+}
+#_playerImage img {
+    width: 100%;
+    height: 100%;
+}
+
+
 
 
 
