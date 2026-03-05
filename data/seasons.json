@@ -1,0 +1,28 @@
+{
+"season_list": [
+        {
+          "seasonid": "CODML2026S1",
+          "label": "Current Season"
+        },
+        {
+          "seasonid": "CODML2025S2",
+          "label": "CDM S10 2025"
+        },
+        {
+          "seasonid": "CODML2025S1",
+          "label": "CDM S9 2025"
+        },
+        {
+          "seasonid": "CODML2024S2",
+          "label": "CDM S8 2024"
+        },
+        {
+          "seasonid": "CODML2024S1",
+          "label": "CDM S7 2024"
+        },
+        {
+          "seasonid": "CODML2023S2",
+          "label": "CDM S6 2023"
+        }
+      ]
+    }

@@ -11,7 +11,45 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
     font-weight: 400;
+    box-sizing: border-box;
  
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: linear-gradient(145deg, #735eeb,#d972ff);
+  }
+
+  .logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-box button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+
+  .search-box button:hover {
+    background-color: #45a049;
+  }
+.loader {
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -22,9 +60,13 @@ h2 {
 body {
 
     background-color: var(--base-bg);
-    padding: 1em 2em 1em 2em;
     color: var(--text-color);
 }
+
+main {
+    padding: 1em 2em 1em 2em;
+}
+
 fieldset {
   display: none;
   border: 1px solid var(--secondary-accent);    /* Solid gray border */
@@ -47,6 +89,7 @@ label {
 }
 
 #_formContainer {
+    display: none;
     background-color: var(--cards);
     overflow: hidden;
     border: 1px solid var(--primary-accent);
@@ -168,31 +211,68 @@ label {
 #_contentArea {
     display: flex;
     flex-direction: column;
-    padding: 4rem 4rem;
+    padding: 1rem 4rem;
     justify-content: center;
     align-items: center;
 }
 
-#_schedulePrev {
+#_scheduleDiv {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 95%;
+}
+
+
+#_schedulePrev, #_scheduleToday, #_scheduleUpcoming {
     display: flex;
     overflow: hidden;
     background-color: var(--cards);
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid var(--primary-accent); 
     width: 100%;
+    flex-wrap: wrap;
 }
+
+#_heading {
+    padding-bottom: 1rem;
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+#_schedulePrev {
 #_matchDate, #_vod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
 }
 
 #_logo, #_name, #_score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 12%;
 }
-
-
-#_score {
-    display: flex;
 }
+#_scheduleToday {
+    #_matchDate, #_logo, #_name, #_score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+    }
+}
+#_scheduleUpcoming {
+    #_matchDate, #_logo, #_name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16%;
+    }
+}
+
+
 
 #_logo img {
     height: 3em;
@@ -206,7 +286,7 @@ label {
     border: none;
     border-radius: 4px;
     height: 2em;
-    width: 100%;
+    min-width: 100%;
     font-size: 13pt;
     text-align: center;
 }
@@ -405,7 +485,34 @@ label {
     height: 100%;
 }
 
+/*Style fotm startpage*/
 
+#_scheduleRadio {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 60%;
+    padding-bottom: 1rem;
+}
+
+#_scheduleRadio input[type="radio"] {
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    }
+
+#_scheduleRadio label {
+    display: inline-block;
+    background-color: var(--base-bg);
+    padding: 5px 10px;
+    border: 2px solid var(--primary-accent);
+    font-size: 12pt;
+    border-radius: 4px;
+}
+
+#_scheduleRadio input[type="radio"]:checked + label {
+    background-color:#72839e;
+    border-color: #c42f59;
+}
 
 
 
