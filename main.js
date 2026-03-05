@@ -22,27 +22,7 @@ const scheduleToday = document.getElementById('_scheduleToday');
 const schedulePrev = document.getElementById('_schedulePrev');
 const scheduleUpcoming = document.getElementById('_scheduleUpcoming');
 
-frontRadio.addEventListener('change', function (e) {
-    e.preventDefault();
-    switch (frontRadio.value) {
-        case 'today':
-            scheduleToday.style.display = 'flex';
-            schedulePrev.style.display = 'none';
-            scheduleUpcoming.style.display = 'none';
-            break;
-        case 'past':
-            scheduleToday.style.display = 'none';
-            schedulePrev.style.display = 'flex';
-            scheduleUpcoming.style.display = 'none';
-            break;
-        case 'future':
-            scheduleToday.style.display = 'none';
-            schedulePrev.style.display = 'none';
-            scheduleUpcoming.style.display = 'flex';
 
-
-    }
-})
 
 // show form on clicking search button
 function showForm() {
