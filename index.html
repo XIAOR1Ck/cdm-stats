@@ -2,139 +2,135 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title></title>
-  <link href="style.css" rel="stylesheet" />
-  <style>
-    .loader {
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid #3498db;
-      width: 120px;
-      height: 120px;
-      -webkit-animation: spin 2s linear infinite;
-      /* Safari */
-      animation: spin 2s linear infinite;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
 
-    /* Safari */
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
 
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a href="/" class="logo">CDMStats</a>
+    <nav class="navbar">
+        <a href="/" class="logo">CDMStats</a>
 
-    <div class="search-box">
-      <button onclick="showForm()">Search</button>
-    </div>
-  </nav>
-  </nav>
-  <main>
-    <div id="_formContainer">
-      <form id="_searchForm">
-        <div id="_normalArea">
-          <div id="_selectBoxes">
-            <div id="_formElements">
-              <label for="_dataType">Data Type</label>
-              <select name="datatype" id="_dataType">
-                <option value="schedule">Schedule</option>
-                <option value="searchPlayer">Player</option>
-                <option value="mapData">Map Data</option>
-                <option value="teamData">Team Data</option>
-              </select>
-            </div>
-            <div id="_formElements">
-              <label for="_season">Season</label>
-              <select name="season" id="_season">
-                <option value="CODML2026S1">Current Season</option>
-                <option value="CODML2025S2">CDM S10 2025</option>
-                <option value="CODML2025S1">CDM S9 2025</option>
-                <option value="CODML2024S2">CDM S8 2024</option>
-                <option value="CODML2024S1">CDM S7 2024</option>
-                <option value="CODML2023S2">CDM S6 2023</option>
-              </select>
-            </div>
-          </div>
-          <fieldset>
-            <legend>Which Game Mode?</legend>
-            <div id="_radioBoxes">
-              <div>
-                <input type="radio" id="_fullRadio" name="gameModes" value="FULL" checked />
-                <label for="_fullRadio">Full</label>
-              </div>
-
-              <div>
-                <input type="radio" id="_hpRadio" name="gameModes" value="Hotspot" />
-                <label for="_hpRadio">Hardpoint</label>
-              </div>
-
-              <div>
-                <input type="radio" id="_sndRadio" name="gameModes" value="Blast" />
-                <label for="_sndRadio">S&D</label>
-              </div>
-              <div>
-                <input type="radio" id="_ctlRadio" name="gameModes" value="Control" />
-                <label for="_ctlRadio">Control</label>
-              </div>
-            </div>
-          </fieldset>
+        <div class="search-box">
+            <button onclick="showForm()">Search</button>
         </div>
-        <div id="_searchArea">
-          <!-- <input type="text" id="_playerInput" list="_playerList" placeholder="Search Player..." />
+    </nav>
+    <main>
+        <div id="_formContainer">
+            <form id="_searchForm">
+                <div id="_normalArea">
+                    <div id="_selectBoxes">
+                        <div id="_formElements">
+                            <label for="_dataType">Data Type</label>
+                            <select name="datatype" id="_dataType">
+                                <option value="schedule">Schedule</option>
+                                <option value="searchPlayer">Player</option>
+                                <option value="mapData">Map Data</option>
+                                <option value="teamData">Team Data</option>
+                            </select>
+                        </div>
+                        <div id="_formElements">
+                            <label for="_season">Season</label>
+                            <select name="season" id="_season">
+                                <option value="CODML2026S1">Current Season</option>
+                                <option value="CODML2025S2">CDM S10 2025</option>
+                                <option value="CODML2025S1">CDM S9 2025</option>
+                                <option value="CODML2024S2">CDM S8 2024</option>
+                                <option value="CODML2024S1">CDM S7 2024</option>
+                                <option value="CODML2023S2">CDM S6 2023</option>
+                            </select>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Which Game Mode?</legend>
+                        <div id="_radioBoxes">
+                            <div>
+                                <input type="radio" id="_fullRadio" name="gameModes" value="FULL" checked />
+                                <label for="_fullRadio">Full</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="_hpRadio" name="gameModes" value="Hotspot" />
+                                <label for="_hpRadio">Hardpoint</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="_sndRadio" name="gameModes" value="Blast" />
+                                <label for="_sndRadio">S&D</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="_ctlRadio" name="gameModes" value="Control" />
+                                <label for="_ctlRadio">Control</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="_searchArea">
+                    <!-- <input type="text" id="_playerInput" list="_playerList" placeholder="Search Player..." />
 
             <input type="hidden" id="_playerId" /> -->
+                </div>
+                <div id="_submitDiv">
+                    <input type="submit" id="_submitBtn" />
+                </div>
+            </form>
         </div>
-        <div id="_submitDiv">
-          <input type="submit" id="_submitBtn" />
-        </div>
-      </form>
-    </div>
 
-    <div id="_contentArea">
-      <div id="_heading">CURRENT SEASON SCHEDULE</div>
-      <div id="_scheduleRadio">
-        <div id="__radio">
-          <input type="radio" name="scheduleRadio" id="_previous" value="previous">
-          <label for="_previous">Previous</label>
+        <div id="_contentArea">
+            <div id="_heading">CURRENT SEASON SCHEDULE</div>
+            <div id="_scheduleRadio">
+                <div id="__radio">
+                    <input type="radio" name="scheduleRadio" id="_previous" value="previous" />
+                    <label for="_previous">Previous</label>
+                </div>
+                <div id="__radio">
+                    <input type="radio" name="scheduleRadio" id="_today" value="today" checked />
+                    <label for="_today">Today</label>
+                </div>
+                <div id="__radio">
+                    <input type="radio" name="scheduleRadio" id="_upcoming" value="upcoming" />
+                    <label for="_upcoming">Upcoming</label>
+                </div>
+            </div>
+            <div id="_scheduleDiv"></div>
         </div>
-        <div id="__radio">
-          <input type="radio" name="scheduleRadio" id="_today" value="today" checked>
-          <label for="_today">Today</label>
-        </div>
-        <div id="__radio">
-          <input type="radio" name="scheduleRadio" id="_upcoming" value="upcoming">
-          <label for="_upcoming">Upcoming</label>
-        </div>
-      </div>
-      <div id="_scheduleDiv">
+    </main>
 
-      </div>
-    </div>
-  </main>
-
-  <script src="main.js"></script>
-
+    <script src="main.js"></script>
 </body>
 
 </html>
